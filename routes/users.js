@@ -105,4 +105,15 @@ router.get(
     });
   }
 );
+router.get("/getAllUsers", (req, res) => {
+  User.find()
+    .then(users => res.json(users))
+    .catch(err => res.status(404).json({ notFound: "No users found" }));
+});
+/////get specific user
+router.get("/getUser/:user_id", (req, res) => {
+  User.findOne({ _id: req.params.user_id })
+    .then(user => res.json(user))
+    .catch(err => res.status(404).json({ notFound: "No users found" }));
+});
 module.exports = router;
