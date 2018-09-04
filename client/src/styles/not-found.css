@@ -1,0 +1,11 @@
+.notFound {
+  padding-top: 100px;
+  padding-left: 30px;
+  min-height: 100vh;
+  width: 100%;
+  background-color: black;
+  color: white;
+  font-family: "ubuntu";
+  font-size: 30px;
+  box-sizing: border-box;
+}

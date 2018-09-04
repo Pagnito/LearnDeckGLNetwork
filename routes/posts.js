@@ -4,10 +4,10 @@ const passport = require("passport");
 const router = express.Router();
 //const User = require("../models/user");
 const Post = require("../models/posts-model");
-/*const validatePostInput = require("../validation/posts-validation");
-const validateCommentInput = require("../validation/comments-validation");*/
+const validatePostInput = require("../validation/posts-validation");
+const validateCommentInput = require("../validation/comments-validation");
 ///get single post//public
-router.get("/:id", (req, res) => {
+router.get("/post/:id", (req, res) => {
   Post.findById(req.params.id)
     .then(post => res.json(post))
     .catch(err => res.status(404).json({ error: "No post for you" }));
@@ -26,13 +26,14 @@ router.post(
   "/post",
   passport.authenticate("jwt", { session: false }),
   async (req, res) => {
-    /*  const { errors, isValid } = validatePostInput(req.body);
+    const { errors, isValid } = validatePostInput(req.body);
     if (!isValid) {
       return res.status(400).json(errors);
-    }*/
+    }
     const newPost = await new Post({
       text: req.body.text,
-      reactionTo: req.body.reactionTo,
+      topic: req.body.topic,
+      description: req.body.description,
       userName: req.body.userName,
       avatar: req.body.avatar,
       userId: req.user.id
@@ -57,7 +58,9 @@ router.delete(
           .json({ error: "wow buddy what you think you doing" });
       }
       await post.remove();
-      res.json({ success: "You have deleted history, congratz.." });
+      Post.find().then(posts => {
+        res.json(posts);
+      });
     } catch (err) {
       res.status(404).json({ error: "no post" });
     }
@@ -125,10 +128,10 @@ router.post(
   "/comment/:id",
   passport.authenticate("jwt", { session: false }),
   async (req, res) => {
-    /*const { errors, isValid } = validateCommentInput(req.body);
+    const { errors, isValid } = validateCommentInput(req.body);
     if (!isValid) {
       return res.status(404).json(errors);
-    }*/
+    }
     try {
       let post = await Post.findById(req.params.id);
       let newComment = {
@@ -141,9 +144,7 @@ router.post(
       post.comments.unshift(newComment);
 
       await post.save();
-      Post.find()
-        .sort({ date: -1 })
-        .then(posts => res.json(posts));
+      res.json(post);
     } catch (err) {
       res.status(404).json({ error: "No post to comment on" });
     }
@@ -173,9 +174,7 @@ router.delete(
       });
 
       await post.save();
-      Post.find()
-        .sort({ date: -1 })
-        .then(posts => res.json(posts));
+      res.json(post);
     } catch (err) {
       res.status(404).json({ error: "No post to delete" });
     }

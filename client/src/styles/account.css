@@ -1,0 +1,43 @@
+.accountWrap {
+  min-height: 100vh;
+  width: 100%;
+  padding-top: 80px;
+  box-sizing: border-box;
+  background-color: rgb(42, 68, 86);
+  display: flex;
+  justify-content: center;
+}
+.accountLetter {
+  width: 80%;
+  display: flex;
+}
+.accountUsername {
+  font-family: "Ubuntu";
+  color: white;
+  font-size: 40px;
+}
+.addRepoBtn {
+  font-family: "Ubuntu";
+  color: 041725;
+  font-size: 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.addRepoBtn:hover {
+  transition: all 0.3s;
+  transform: scale(1.1);
+  color: #e5a930;
+}
+.accountAvatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 70px;
+}
+.accountHeader {
+  width: 20%;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+  border-right: 2px solid #213746;
+}

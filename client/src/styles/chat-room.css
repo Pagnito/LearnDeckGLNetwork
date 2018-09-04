@@ -1,0 +1,124 @@
+.chatRoomWrap {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  position: ;
+}
+.chatUserList {
+  width: 20%;
+  height: 100vh;
+  padding-top: 80px;
+  box-sizing: border-box;
+  background-color: rgb(26, 45, 59);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.crListItem {
+  color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.3);
+  height: 40px;
+  font-size: 15px;
+  width: 98%;
+  display: flex;
+  padding: 5px;
+  box-sizing: border-box;
+  align-items: center;
+  margin-top: 5px;
+  font-family: "ubuntu";
+}
+.crListItem:hover {
+  background-color: #e5a930;
+  color: black;
+  cursor: pointer;
+}
+.chatRoomList {
+  width: 20%;
+  background-color: rgb(26, 45, 59);
+  padding-top: 80px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.chatRoom {
+  height: 100vh;
+  width: 60%;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+.chatInputs {
+  width: 100%;
+  display: flex;
+  height: 20vh;
+}
+.chatBox {
+  height: 80vh;
+  width: 100%;
+  padding-top: 80px;
+  color: #041725;
+  border: 1px solid black;
+  overflow: scroll;
+  background-color: #b1c5c6;
+  border: none;
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  font-family: "montserrat";
+  font-weight: bold;
+}
+.chatText {
+  width: 80%;
+  padding: 8px;
+  font-size: 20px;
+  box-sizing: border-box;
+  font-family: "josefin sans";
+  outline: none;
+  background-color: #213746;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "montserrat";
+}
+.chatBtn {
+  width: 20%;
+  background-color: #213746;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fa-comment {
+  color: #e5a930;
+  font-size: 50px;
+  cursor: pointer;
+  transition: all 0.3;
+}
+.fa-comment:hover {
+  color: #ed822a;
+}
+.fa-comment:active {
+  transition: all 0.3;
+  transform: scale(0.8);
+}
+.msg {
+  margin: 10px;
+  display: flex;
+}
+.msgUserName {
+  color: rgb(91, 126, 150);
+  margin-bottom: 5px;
+}
+.msgAvatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.positioner {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  box-sizing: border-box;
+  max-width: 90%;
+  word-wrap: break-word;
+}

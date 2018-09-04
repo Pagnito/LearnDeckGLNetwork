@@ -1,0 +1,126 @@
+.forumPostWrap {
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgba(4, 23, 37, 0.9);
+  padding-top: 79px;
+  display: flex;
+  justify-content: center;
+}
+.trashIcon {
+  color: white;
+}
+.forumPost {
+  width: 80%;
+  background-color: rgba(0, 0, 0, 0.5);
+  min-height: 100vh;
+  border-left: 2px solid #213746;
+  border-right: 2px solid #213746;
+  padding-bottom: 100px;
+}
+.forumHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.forumTitle {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 40px;
+  margin-top: 10px;
+}
+.forumDate {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 15px;
+  align-items: flex-end;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  border-bottom: 2px solid #213746;
+}
+.forumContent {
+  color: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+  border-bottom: 2px solid #213746;
+}
+.textAreaWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.textArea {
+  margin-top: 10px;
+  outline: none;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  height: 200px;
+  width: 98%;
+  font-size: 17px;
+  font-family: "josefin sans";
+  border: none;
+  border-radius: 3px;
+}
+.submitComment {
+  margin-top: 5px;
+  height: 40px;
+  font-size: 30px;
+  font-family: "josefin sans";
+  background-color: #e59227;
+  width: 40%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.comments {
+  margin-top: 20px;
+
+  color: rgba(255, 255, 255, 0.7);
+}
+.commentWrap {
+  border-bottom: 2px solid #213746;
+}
+.aboutCommentor {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+
+  box-sizing: border-box;
+  font-family: "josefin sans";
+}
+.commentAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+}
+.commentUsername {
+  margin-left: 10px;
+}
+.commentDate {
+  margin-left: 10px;
+}
+.commentText {
+  padding: 20px;
+  box-sizing: border-box;
+}
+.trashCommentWrap {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+
+  box-sizing: border-box;
+}
+.trashComment:hover {
+  color: #e59227;
+  cursor: pointer;
+}
+.submitComment:hover {
+  background-color: lightblue;
+}
+.submitComment:active {
+  background-color: #4286f4;
+}
