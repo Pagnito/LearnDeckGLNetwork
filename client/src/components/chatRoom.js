@@ -16,7 +16,7 @@ class ChatRoom extends Component {
       chatUsers: []
     };
 
-    this.socket = io("http://localhost:3000");
+    this.socket = io("https://peaceful-badlands-20801.herokuapp.com/");
     this.socket.on("connect", () => {
       this.socket.emit("newUser", { user: this.props.user });
       this.socket.on("chatUsers", chatUsers => {
