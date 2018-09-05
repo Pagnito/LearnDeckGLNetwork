@@ -73,3 +73,29 @@
     font-size: 40px;
   }
 }
+@media (max-width: 650px) {
+  .aboutTextBox {
+    font-size: 20px;
+  }
+
+  .contactInfo {
+    font-size: 20px;
+  }
+
+  .furtherInfo {
+    font-size: 20px;
+  }
+}
+@media (max-width: 450px) {
+  .aboutTextBox {
+    font-size: 17px;
+  }
+
+  .contactInfo {
+    font-size: 17px;
+  }
+
+  .furtherInfo {
+    font-size: 17px;
+  }
+}

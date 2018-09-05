@@ -44,6 +44,7 @@
   color: rgba(255, 255, 255, 0.7);
   padding: 10px;
   border-bottom: 2px solid #213746;
+  word-wrap: break-word;
 }
 .textAreaWrap {
   display: flex;
