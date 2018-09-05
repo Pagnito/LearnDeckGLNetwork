@@ -124,3 +124,8 @@
 .submitComment:active {
   background-color: #4286f4;
 }
+@media (max-width: 900px) {
+  .forumPost {
+    width: 100%;
+  }
+}

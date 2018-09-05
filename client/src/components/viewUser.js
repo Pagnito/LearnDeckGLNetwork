@@ -3,7 +3,7 @@ import axios from "axios";
 import NotFound from "./not-found";
 import "../styles/view-profile.css";
 import AddRepo from "./addRepo";
-class Account extends Component {
+class ViewUser extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -86,4 +86,4 @@ class Account extends Component {
     }
   }
 }
-export default Account;
+export default ViewUser;

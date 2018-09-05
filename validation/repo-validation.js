@@ -22,7 +22,7 @@ module.exports = function validateRepoInput(data) {
   if (validator.isEmpty(data.repoDescription)) {
     errors.repoDescription = "Description field is required";
   }
-  if (!validator.isLength(data.repoDescription, { min: 20, max: 150 })) {
+  if (!validator.isLength(data.repoDescription, { min: 20, max: 100 })) {
     errors.repoDescription = "Message should be between 20 and 150 characters";
   }
 

@@ -4,6 +4,7 @@ import "../styles/chat-room.css";
 import NotFound from "./not-found";
 import moment from "moment";
 import { Link } from "react-router-dom";
+
 class ChatRoom extends Component {
   constructor(props) {
     super(props);
@@ -13,10 +14,11 @@ class ChatRoom extends Component {
       users: [],
       userName: "",
       avatar: "",
-      chatUsers: []
+      chatUsers: [],
+      user: {}
     };
 
-    this.socket = io("https://peaceful-badlands-20801.herokuapp.com/");
+    this.socket = io("http://localhost:3000");
     this.socket.on("connect", () => {
       this.socket.emit("newUser", { user: this.props.user });
       this.socket.on("chatUsers", chatUsers => {
@@ -36,10 +38,15 @@ class ChatRoom extends Component {
       this.setState({ messages: data });
     });
   }
-  componentDidUpdate(prevState) {
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.user !== this.props.user) {
+      this.setState({ user: this.props.user });
+    }
     if (this.state.messages !== prevState.messages) {
-      const chatBox = document.getElementById("chatBox");
-      chatBox.scrollTop = chatBox.scrollHeight;
+      if (Object.keys(this.props.user).length > 0) {
+        const chatBox = document.getElementById("chatBox");
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }
     }
   }
   componentWillUnmount() {
@@ -105,8 +112,10 @@ class ChatRoom extends Component {
             <div className="crListItem">Other...Coming Soon</div>
           </div>
           <div className="chatRoom">
-            <div id="chatBox" className="chatBox">
-              {this.renderChat()}
+            <div className="chatBoxWrapper">
+              <div id="chatBox" className="chatBox">
+                {this.renderChat()}
+              </div>
             </div>
             <form
               onChange={this.onChange}
@@ -122,7 +131,7 @@ class ChatRoom extends Component {
           <div className="chatUserList">{this.renderChatUsers()}</div>
         </div>
       );
-    } else {
+    } else if (Object.keys(this.state.user).length === 0) {
       return (
         <div>
           <NotFound />

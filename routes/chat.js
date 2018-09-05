@@ -10,6 +10,7 @@ module.exports = io => {
       chatUsers.push(data);
       io.emit("chatUsers", chatUsers);
     });
+    connections.push(socket);
     console.log("connected: %s sockets connected", connections.length);
     ChatMsg.find()
       .sort({ date: 1 })

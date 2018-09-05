@@ -70,3 +70,8 @@
 .repoDesc {
   height: 100px;
 }
+@media (max-width: 900px) {
+  .addRepoWrap {
+    width: 94%;
+  }
+}

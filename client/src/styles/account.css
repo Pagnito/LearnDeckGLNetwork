@@ -164,3 +164,25 @@
     height: 0px;
   }
 }
+@media (max-width: 900px) {
+  .accountLetter {
+    flex-direction: column;
+
+    align-items: center;
+    width: 100%;
+  }
+  .repos {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0px;
+  }
+  .repoWrap {
+    width: 98%;
+    min-height: 200px;
+  }
+  .accountHeader {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #213746;
+  }
+}
