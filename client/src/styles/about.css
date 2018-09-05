@@ -1,0 +1,75 @@
+.aboutWrap {
+  background-color: rgba(0, 0, 0, 0.8);
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+}
+.aboutTextBox {
+  color: white;
+  padding: 30px;
+  font-size: 30px;
+  font-family: "ubuntu";
+}
+.email {
+  color: #e5a930;
+}
+.contactInfo {
+  color: white;
+  padding: 30px;
+  padding-top: 10px;
+  font-size: 30px;
+  font-family: "ubuntu";
+}
+
+.furtherInfo {
+  color: white;
+  padding: 30px;
+  font-size: 30px;
+  font-family: "ubuntu";
+}
+.furtherInfoWrap {
+  display: flex;
+  align-items: center;
+}
+.showLink {
+  color: #dd8927;
+  margin-left: 20px;
+  font-size: 0px;
+  animation: showLinks 0.5s ease-out forwards;
+  animation-delay: 37s;
+}
+.showLink2 {
+  color: #dd8927;
+  margin-left: 20px;
+  font-size: 0px;
+  animation: showLinks 0.5s ease-out forwards;
+  animation-delay: 37.2s;
+}
+.showLink3 {
+  color: #dd8927;
+  margin-left: 20px;
+  font-size: 0px;
+  animation: showLinks 0.5s ease-out forwards;
+  animation-delay: 37.4s;
+}
+.fabL {
+  transition: all 0.3s;
+}
+.fabL:hover {
+  transition: all 0.3s;
+  transform: scale(1.1);
+  color: #e5a930;
+}
+@keyframes showLinks {
+  0% {
+    font-size: 0px;
+  }
+  70% {
+    font-size: 60px;
+  }
+  100% {
+    font-size: 40px;
+  }
+}

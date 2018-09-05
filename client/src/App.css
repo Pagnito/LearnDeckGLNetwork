@@ -4,15 +4,15 @@ body {
   padding: 0px;
   min-height: 100vh;
 
-  background: url("./assets/landingBg.jpeg");
+  background: url("./assets/landingBg.jpg");
 
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-.app {
+.App {
   max-width: 1920px;
-  overflow: hidden;
+  overflow: hidden !important;
 }
 .form-input::placeholder {
   color: rgba(219, 87, 43, 0.7);

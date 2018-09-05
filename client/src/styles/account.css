@@ -11,10 +11,51 @@
   width: 80%;
   display: flex;
 }
+.trashBtnWrap {
+  display: flex;
+  justify-content: flex-end;
+}
+.delRepoBtn {
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+}
+.delRepoBtn:hover {
+  color: #e5a930;
+}
 .accountUsername {
   font-family: "Ubuntu";
   color: white;
   font-size: 40px;
+}
+.changePicWrap {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 0px;
+}
+.changePicBtn {
+  outline: none;
+  border: 2px solid rgb(25, 46, 61);
+  background-color: transparent;
+  height: 25px;
+}
+.changePicBtn:hover {
+  background-color: #e5a930;
+  cursor: pointer;
+}
+.changePicInput {
+  width: 100%;
+  height: 30px;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
+  font-size: 20px;
+  font-family: "josefin sans";
 }
 .addRepoBtn {
   font-family: "Ubuntu";
@@ -40,4 +81,86 @@
   flex-direction: column;
   align-items: center;
   border-right: 2px solid #213746;
+}
+.repos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-left: 10px;
+
+  width: 100%;
+  align-content: flex-start;
+}
+.repoWrap {
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.7);
+  min-height: 200px;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 30%;
+  word-wrap: break-word;
+}
+.repoWrap:hover {
+  transition: all 0.3s;
+  background-color: rgb(46, 78, 100);
+}
+.repoListName {
+  font-size: 25px;
+  font-family: "ubuntu";
+  text-align: center;
+  color: #e5a930;
+}
+.repoListDesc {
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "josefin sans";
+  font-size: 17px;
+  margin-top: 5px;
+}
+.show {
+  animation: show 0.3s ease-in forwards;
+}
+.hide {
+  animation: hide 0.3s ease-in forwards;
+}
+@keyframes show {
+  0% {
+    min-height: 0vh;
+  }
+  100% {
+    min-height: 50vh;
+  }
+}
+@keyframes hide {
+  0% {
+    height: 50vh;
+  }
+  100% {
+    height: 0vh;
+  }
+}
+.showPic {
+  animation: showPic 0.3s ease-in forwards;
+}
+.hidePic {
+  animation: hidePic 0.3s ease-in forwards;
+}
+@keyframes showPic {
+  0% {
+    min-height: 0px;
+  }
+  100% {
+    min-height: 60px;
+  }
+}
+@keyframes hide {
+  0% {
+    height: 60px;
+  }
+  100% {
+    height: 0px;
+  }
 }

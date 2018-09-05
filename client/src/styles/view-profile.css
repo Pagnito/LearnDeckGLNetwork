@@ -1,120 +1,86 @@
-.forumsWrap {
+.viewWrap {
   min-height: 100vh;
   width: 100%;
-  background-color: black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 80px;
-}
-.delBtn {
-  margin-left: 10px;
-  color: #041725;
-  font-family: "ubuntu";
-  z-index: 10;
-}
-.delBtn:hover {
-  color: #e5a930;
-  cursor: pointer;
-}
-.forumTopics {
-  width: 80%;
-  min-height: 100vh;
-  border-left: 1px solid #213746;
-  border-right: 1px solid #213746;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 100px;
-}
-.postWrapper {
-  width: 100%;
+  padding-top: 79px;
+  box-sizing: border-box;
+  background-color: rgb(42, 68, 86);
   display: flex;
   justify-content: center;
-  min-height: 130px;
 }
-.post {
-  min-height: 150px;
-  width: 98%;
+.viewLetter {
+  width: 100%;
   display: flex;
-  background-color: #213746;
-  margin-top: 10px;
-  font-family: "josefin sans";
-  transition: all 0.3s;
 }
-.aboutPoster {
-  width: 25%;
 
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-right: 2px solid #041725;
+.viewUsername {
+  font-family: "Ubuntu";
+  color: white;
+  font-size: 40px;
 }
-.postDescWrap {
+
+.viewAvatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 70px;
+}
+.viewHeader {
+  width: 25%;
   display: flex;
+  padding: 20px;
   flex-direction: column;
   align-items: center;
+  background: url("../assets/profileHeader2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none;
+  box-shadow: 0px 2000px 0px inset rgba(0, 0, 0, 0.4);
+  border-right: 2px solid #213746;
+}
+.reposView {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-left: 5px;
+
+  width: 75%;
+  align-content: flex-start;
+}
+.repoWrapView {
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.7);
+  min-height: 200px;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s;
   padding: 10px;
   box-sizing: border-box;
-  width: 75%;
+  width: 30%;
+  word-wrap: break-word;
 }
-.postTopic {
-  font-size: 30px;
-  color: #a57228 !important;
-  height: 20%;
-}
-.forumUserName {
-  font-size: 20px;
-  color: #a57228;
-}
-.forumPic {
-  width: 60px;
-  height: 60px;
-  border-radius: 50px;
-  box-shadow: rgba(0, 0, 0, 0.6) 1px 1px 4px 1px;
-}
-.postDesc {
-  display: flex;
-  color: rgba(255, 255, 255, 0.6);
-  width: 100%;
-  height: 60%;
-  margin-top: 20px;
-}
-.postDate {
-  height: 20%;
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-
-  box-sizing: border-box;
-  color: rgba(255, 255, 255, 0.6);
-}
-.post:hover {
+.repoWrapView:hover {
+  transition: all 0.3s;
   background-color: rgb(46, 78, 100);
-  transition: all 0.3s;
 }
-.fa-plus {
-  color: #dd8927 !important;
-  margin-top: 10px;
-  font-size: 40px;
-  cursor: pointer;
-  transition: all 0.3s;
+.repoListNameView {
+  font-size: 25px;
+  font-family: "ubuntu";
+  text-align: center;
+  color: #e5a930;
 }
-.fa-plus:hover {
-  transition: all 0.3s;
-  transform: scale(1.2);
+.repoListDescView {
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "josefin sans";
+  font-size: 17px;
+  margin-top: 5px;
 }
-.fa-plus:active {
-  transform: scale(1);
-}
-.spinnerWrap {
+.spinnerWrapView {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: rgb(42, 68, 86);
 }
 .sk-cube-grid {
   width: 40px;

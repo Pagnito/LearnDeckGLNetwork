@@ -58,16 +58,19 @@ class Header extends Component {
     } else {
       return (
         <div className="nav-1 fixed">
-          <div className="logo-stns vert-center hor-left bg-stretch-8">
+          <div className="logo-stns vert-center hor-left bg-stretch-7">
             <div className="logo">
               Learn<span className="logoStyle">DeckGL</span>
             </div>
           </div>
-          <div className="nav-btn-stns bg-stretch-2 ">
+          <div className="nav-btn-stns bg-stretch-3 ">
             <div className="nav-btns hor-center vert-bot">
               <ul>
                 <li>
                   <Link to="/login">Sign In</Link>
+                </li>
+                <li>
+                  <Link to="/">Register</Link>
                 </li>
                 <li>
                   <Link to="/about">About</Link>

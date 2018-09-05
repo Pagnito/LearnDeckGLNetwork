@@ -10,6 +10,8 @@ import Forums from "./components/forums";
 import ForumPost from "./components/forum-post";
 import AddPost from "./components/add-post";
 import Account from "./components/account";
+import ViewUser from "./components/viewUser";
+import About from "./components/about";
 import { setAuthToken } from "./utils/set-token";
 import jwt_decode from "jwt-decode";
 
@@ -31,6 +33,11 @@ class App extends Component {
       }
     }
   }
+  changePic = picUrl => {
+    axios.post("/api/users/updatePic", picUrl).then(res => {
+      this.setState({ user: res.data });
+    });
+  };
   registerUser = (newUser, history) => {
     axios
       .post("/api/users/register", newUser)
@@ -115,10 +122,18 @@ class App extends Component {
             path="/forums"
             render={props => <Forums {...props} user={this.state.user} />}
           />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/getUser/:id" component={ViewUser} />
           <Route
             exact
             path="/account"
-            render={props => <Account {...props} user={this.state.user} />}
+            render={props => (
+              <Account
+                {...props}
+                changePic={this.changePic}
+                user={this.state.user}
+              />
+            )}
           />
           <Route
             exact

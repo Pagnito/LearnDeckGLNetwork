@@ -4,6 +4,11 @@
   height: 100vh;
   position: ;
 }
+.chatUserAvatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+}
 .chatUserList {
   width: 20%;
   height: 100vh;
@@ -11,8 +16,17 @@
   box-sizing: border-box;
   background-color: rgb(26, 45, 59);
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.chatDate {
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-left: 5px;
+}
+.chatUserItem {
+  margin: 3px;
 }
 .crListItem {
   color: rgba(255, 255, 255, 0.6);

@@ -77,7 +77,7 @@ router.post("/login", (req, res) => {
           userName: user.userName,
           avatar: user.avatar
         };
-        jwt.sign(payload, keys.jwtSecret, { expiresIn: "2h" }, (err, token) => {
+        jwt.sign(payload, keys.jwtSecret, { expiresIn: "5h" }, (err, token) => {
           res.json({
             succes: true,
             token: "Bearer " + token
@@ -90,7 +90,19 @@ router.post("/login", (req, res) => {
     });
   });
 });
-
+/////change pic
+router.post(
+  "/updatePic",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    User.findOne({ email: req.user.email }).then(user => {
+      user.avatar = req.body.avatar;
+      user.save().then(user => {
+        res.json(user);
+      });
+    });
+  }
+);
 ///////get current user
 router.get(
   "/current",
@@ -111,8 +123,9 @@ router.get("/getAllUsers", (req, res) => {
     .catch(err => res.status(404).json({ notFound: "No users found" }));
 });
 /////get specific user
-router.get("/getUser/:user_id", (req, res) => {
-  User.findOne({ _id: req.params.user_id })
+router.get("/getUser/:id", (req, res) => {
+  console.log(req.params.id);
+  User.findOne({ _id: req.params.id })
     .then(user => res.json(user))
     .catch(err => res.status(404).json({ notFound: "No users found" }));
 });
