@@ -31,7 +31,13 @@ class Forums extends Component {
         <div key={ind} className="post">
           <div className="aboutPoster">
             <div className="forumPicWrap">
-              <img className="forumPic" src={post.avatar} />
+              <Link
+                to={`/getUser/${post.userId}`}
+                className="chatUserItem"
+                key={ind}
+              >
+                <img className="forumPic" src={post.avatar} />
+              </Link>
             </div>
             <div className="forumUserName">{post.userName}</div>
           </div>

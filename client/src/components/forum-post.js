@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../styles/forum-post.css";
 import axios from "axios";
 import moment from "moment";
+import { Link } from "react-router-dom";
 class ForumPost extends Component {
   constructor(props) {
     super(props);
@@ -56,10 +57,16 @@ class ForumPost extends Component {
         return (
           <div key={ind} className="commentWrap">
             <div className="aboutCommentor">
-              <img className="commentAvatar" src={comment.avatar} />
+              <Link
+                to={`/getUser/${comment.userId}`}
+                className="chatUserItem"
+                key={ind}
+              >
+                <img className="commentAvatar" src={comment.avatar} />
+              </Link>
               <div className="commentUsername">{comment.userName}</div>
               <div className="commentDate">
-                {moment(comment.date).format("MM Do YY, h:mm")}
+                {moment(comment.date).format("lll")}
               </div>
             </div>
             <div className="commentText">{comment.text}</div>

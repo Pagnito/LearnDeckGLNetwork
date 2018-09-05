@@ -18,19 +18,26 @@ class ChatRoom extends Component {
       user: {}
     };
 
-    this.socket = io("http://localhost:3000");
+    this.socket = io("http://localhost:3000", {
+      extraHeaders: {
+        Authorization: localStorage.getItem("jwtToken")
+      }
+    });
     this.socket.on("connect", () => {
-      this.socket.emit("newUser", { user: this.props.user });
+      setTimeout(() => {
+        this.socket.emit("newUser", { user: this.props.user });
+      }, 500);
       this.socket.on("chatUsers", chatUsers => {
         this.setState({ chatUsers: chatUsers });
       });
     });
+
     this.socket.on("userDisconnected", chatUsers => {
       this.setState({ chatUsers: chatUsers });
     });
     this.socket.on("new message", data => {
       this.setState({ messages: [...this.state.messages, data.message] });
-      console.log(this.state.messages);
+
       const chatBox = document.getElementById("chatBox");
       chatBox.scrollTop = chatBox.scrollHeight;
     });
@@ -77,7 +84,8 @@ class ChatRoom extends Component {
       this.socket.emit("message", {
         message: this.state.message,
         userName: this.props.user.userName,
-        avatar: this.props.user.avatar
+        avatar: this.props.user.avatar,
+        userId: this.props.user.id
       });
       this.setState({ message: "" });
     }
@@ -86,12 +94,18 @@ class ChatRoom extends Component {
     return this.state.messages.map((message, ind) => {
       return (
         <div key={ind} className="msg">
-          <img className="msgAvatar" src={message.avatar} />
+          <Link
+            to={`/getUser/${message.userId}`}
+            className="chatUserItem"
+            key={ind}
+          >
+            <img className="msgAvatar" src={message.avatar} />
+          </Link>
           <div className="positioner">
             <div className="msgUserName">
               {message.userName}
               <span className="chatDate">
-                {moment(message.date).format("MM Do, hh:mm")}
+                {moment(message.date).format("lll")}
               </span>
             </div>
             <div>{message.message}</div>

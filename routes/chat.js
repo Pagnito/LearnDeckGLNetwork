@@ -8,6 +8,7 @@ module.exports = io => {
     /////newUser
     socket.on("newUser", data => {
       chatUsers.push(data);
+      console.log(data);
       io.emit("chatUsers", chatUsers);
     });
     connections.push(socket);
@@ -37,7 +38,8 @@ module.exports = io => {
       const newMsg = new ChatMsg({
         userName: data.userName,
         message: data.message,
-        avatar: data.avatar
+        avatar: data.avatar,
+        userId: data.userId
       });
       newMsg.save();
     });
