@@ -8,7 +8,7 @@ module.exports = io => {
     /////newUser
     socket.on("newUser", data => {
       chatUsers.push(data);
-      console.log(data);
+
       io.emit("chatUsers", chatUsers);
     });
     connections.push(socket);

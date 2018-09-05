@@ -11,7 +11,9 @@ class Login extends Component {
   }
   componentDidUpdate(prevProps) {
     if (prevProps.user !== this.props.user) {
-      this.props.history.push("/forums");
+      if (Object.keys(this.props.user).length > 0) {
+        this.props.history.push("/forums");
+      }
     }
     if (this.props.errors !== prevProps.errors) {
       this.setState({ errors: this.props.errors.errors });
@@ -27,6 +29,12 @@ class Login extends Component {
       password: this.state.password
     };
     this.props.loginUser(newUser, this.props.history);
+    if (Object.keys(this.props.user).length === 0) {
+      this.setState({
+        email: "",
+        password: ""
+      });
+    }
   };
   render() {
     return (

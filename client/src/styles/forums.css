@@ -86,6 +86,7 @@
 .postDate {
   height: 20%;
   display: flex;
+  margin-top: 10px;
   justify-content: flex-end;
   width: 100%;
 
@@ -196,5 +197,16 @@
 @media (max-width: 900px) {
   .forumTopics {
     width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .postTopic {
+    font-size: 20px;
+  }
+  .postDate {
+    font-size: 10px;
+    border: 1px solid white;
+    display: flex;
+    align-items: flex-end;
   }
 }
