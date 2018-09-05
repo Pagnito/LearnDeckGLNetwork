@@ -44,7 +44,6 @@ class AddRepo extends Component {
         document.getElementById("addRepoForm").classList.add("hide");
       })
       .catch(err => {
-        console.log(err.response.data);
         this.setState({
           errors: err.response.data,
           repoName: err.response.data.repoName ? "" : this.state.repoName,

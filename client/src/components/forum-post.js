@@ -88,7 +88,6 @@ class ForumPost extends Component {
       this.setState({ user: this.props.user });
     }
     if (this.state.errors == "Unauthorized") {
-      console.log("wtf");
       this.setState({
         errors: {
           text: "You must be logged in to participate"

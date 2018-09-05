@@ -316,3 +316,11 @@ ul {
     display: none;
   }
 }
+@media (max-width: 600px) {
+  .logged-logo {
+    font-size: 25px;
+  }
+  .logo {
+    font-size: 25px;
+  }
+}
