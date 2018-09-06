@@ -26,6 +26,7 @@ class Landing extends Component {
     }
   }
   onSubmit = e => {
+    this.setState({ errors: {} });
     e.preventDefault();
     const newUser = {
       email: this.state.email,
@@ -33,7 +34,16 @@ class Landing extends Component {
       password: this.state.password,
       password2: this.state.password2
     };
+
     this.props.registerUser(newUser, this.props.history);
+    setTimeout(() => {
+      this.setState({
+        email: !this.state.errors.email ? this.state.email : "",
+        userName: !this.state.errors.userName ? this.state.userName : "",
+        password: !this.state.errors.password ? this.state.password : "",
+        password2: !this.state.errors.password2 ? this.state.password2 : ""
+      });
+    }, 500);
   };
   render() {
     return (

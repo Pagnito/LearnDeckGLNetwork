@@ -30,10 +30,12 @@ class Login extends Component {
     };
     this.props.loginUser(newUser, this.props.history);
     if (Object.keys(this.props.user).length === 0) {
-      this.setState({
-        email: "",
-        password: ""
-      });
+      setTimeout(() => {
+        this.setState({
+          email: !this.state.errors.email ? this.state.email : "",
+          password: !this.state.errors.password ? this.state.password : ""
+        });
+      }, 500);
     }
   };
   render() {
