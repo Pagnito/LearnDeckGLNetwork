@@ -111,6 +111,7 @@
 .commentText {
   padding: 20px;
   box-sizing: border-box;
+  word-wrap: break-word;
 }
 .trashCommentWrap {
   display: flex;
