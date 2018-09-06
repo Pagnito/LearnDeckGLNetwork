@@ -77,6 +77,21 @@ class ChatRoom extends Component {
   onChange = e => {
     this.setState({ message: e.target.value });
   };
+  sendChatMsgEnterKey = e => {
+    if (e.key == "Enter") {
+      if (this.state.message.length > 0) {
+        e.preventDefault();
+
+        this.socket.emit("message", {
+          message: this.state.message,
+          userName: this.props.user.userName,
+          avatar: this.props.user.avatar,
+          userId: this.props.user.id
+        });
+        this.setState({ message: "" });
+      }
+    }
+  };
   sendChatMsg = e => {
     if (this.state.message.length > 0) {
       e.preventDefault();
@@ -136,7 +151,11 @@ class ChatRoom extends Component {
               onSubmit={this.sendChatMsg}
               className="chatInputs"
             >
-              <textarea value={this.state.message} className="chatText" />
+              <textarea
+                onKeyPress={this.sendChatMsgEnterKey}
+                value={this.state.message}
+                className="chatText"
+              />
               <div className="chatBtn">
                 <i onClick={this.sendChatMsg} className="far fa-comment" />
               </div>
