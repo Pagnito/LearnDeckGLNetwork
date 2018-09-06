@@ -46,7 +46,7 @@ class AddPost extends Component {
               : "",
             text: !this.state.errors.text ? this.state.text : ""
           });
-        }, 500);
+        }, 1000);
       });
   };
   onChange = e => {

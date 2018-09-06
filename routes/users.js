@@ -7,7 +7,7 @@ const gravatar = require("gravatar");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const keys = require("../config/keys");
-
+var avatarMe = require("avatar-me");
 const validateRegisterInput = require("../validation/register-validation");
 const validateLoginInput = require("../validation/login-validation");
 router.get("/test", (req, res) => {
@@ -40,9 +40,20 @@ router.post("/register", (req, res) => {
             s: "200", //size
             d: "mm" //Default
           });
+          var av = "";
+          avatarMe.configure({
+            defaultAvatar: "neoAvatar.png",
+            defaultAvatarPath:
+              "https://scontent.fbed1-1.fna.fbcdn.net/v/t1.0-9/41032872_1346113672186786_6907471266500837376_n.jpg?_nc_cat=0&oh=c10f3fd89992f3ef8e877d48207d1d34&oe=5C26DE32"
+          });
+          avatarMe.fetchAvatar(req.body.email, (err, avat) => {
+            if (err) console.log(err);
+            console.log(avat);
+            av = avat;
+          });
           const newUser = new User({
             userName: req.body.userName,
-            email: req.body.email,
+            email: req.body.email.toLowerCase(),
             avatar,
             password: req.body.password
           });
@@ -142,7 +153,6 @@ router.get("/getAllUsers", (req, res) => {
 });
 /////get specific user
 router.get("/getUser/:id", (req, res) => {
-  console.log(req.params.id);
   User.findOne({ _id: req.params.id })
     .then(user => res.json(user))
     .catch(err => res.status(404).json({ notFound: "No users found" }));

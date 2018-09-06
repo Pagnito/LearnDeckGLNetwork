@@ -44,7 +44,7 @@ class App extends Component {
       .then(res => {
         this.setState({ registeredUser: res.data });
         const regstrdUsr = {
-          email: newUser.email,
+          email: newUser.email.toLowerCase(),
           password: newUser.password
         };
         axios

@@ -25,7 +25,7 @@ class Login extends Component {
   loginUser = e => {
     e.preventDefault();
     const newUser = {
-      email: this.state.email,
+      email: this.state.email.toLowerCase(),
       password: this.state.password
     };
     this.props.loginUser(newUser, this.props.history);
