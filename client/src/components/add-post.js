@@ -17,6 +17,7 @@ class AddPost extends Component {
     window.scroll(0, 0);
   }
   send = () => {
+    this.setState({ errors: {} });
     const newPost = {
       topic: this.state.topic,
       description: this.state.description,
@@ -34,7 +35,18 @@ class AddPost extends Component {
         }, 1000);
       })
       .catch(err => {
-        this.setState({ errors: err.response.data });
+        this.setState({
+          errors: err.response.data
+        });
+        setTimeout(() => {
+          this.setState({
+            topic: !this.state.errors.topic ? this.state.topic : "",
+            description: !this.state.errors.description
+              ? this.state.description
+              : "",
+            text: !this.state.errors.text ? this.state.text : ""
+          });
+        }, 500);
       });
   };
   onChange = e => {

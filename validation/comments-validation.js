@@ -15,10 +15,7 @@ module.exports = function validateCommentInput(data) {
   data.text = !isEmpty(data.text) ? data.text : "";
 
   if (validator.isEmpty(data.text)) {
-    errors.text = "Text field is required";
-  }
-  if (!validator.isLength(data.text, { min: 20, max: 400 })) {
-    errors.text = "Message should be between 20 and 400 characters";
+    errors.text = "Comment is required to submit";
   }
 
   return {

@@ -18,7 +18,7 @@ module.exports = function validatePostInput(data) {
     errors.description = "Description should be between 10 and 150 characters";
   }
   if (validator.isEmpty(data.text)) {
-    errors.text = "Text field is required";
+    errors.text = "Content is required";
   }
   if (!validator.isLength(data.text, { min: 10 })) {
     errors.text = "Post should be at least 10 characters";
