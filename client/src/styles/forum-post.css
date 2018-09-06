@@ -23,7 +23,7 @@
   align-items: center;
 }
 .forumTitle {
-  color: rgba(255, 255, 255, 0.6);
+  color: #cd992e;
   font-size: 40px;
   margin-top: 10px;
 }
@@ -100,9 +100,13 @@
 }
 .commentUsername {
   margin-left: 10px;
+  font-size: 17px;
+  color: #cd992e;
 }
 .commentDate {
   margin-left: 10px;
+  font-size: 12px;
+  margin-top: 5px;
 }
 .commentText {
   padding: 20px;
