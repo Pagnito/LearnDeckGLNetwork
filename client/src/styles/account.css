@@ -156,7 +156,7 @@
     min-height: 60px;
   }
 }
-@keyframes hide {
+@keyframes hidePic {
   0% {
     height: 60px;
   }
