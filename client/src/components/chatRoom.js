@@ -18,7 +18,7 @@ class ChatRoom extends Component {
       user: {}
     };
 
-    this.socket = io("https://peaceful-badlands-20801.herokuapp.com/", {
+    this.socket = io("https://learndeckgl.herokuapp.com/", {
       extraHeaders: {
         Authorization: localStorage.getItem("jwtToken")
       }
