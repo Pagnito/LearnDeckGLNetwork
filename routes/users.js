@@ -7,7 +7,7 @@ const gravatar = require("gravatar");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const keys = require("../config/keys");
-var avatarMe = require("avatar-me");
+
 const validateRegisterInput = require("../validation/register-validation");
 const validateLoginInput = require("../validation/login-validation");
 router.get("/test", (req, res) => {
