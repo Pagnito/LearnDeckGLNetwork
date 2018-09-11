@@ -8,13 +8,14 @@ class About extends Component {
       rounds: 0,
       theSentenceTrain: "",
       text: `Hello, Im a web developer and at the moment
-        I am working on a DeckGL project. I found that there isn't a big
-        community for this framework yet and there is not a lot of resources
-        to find answers to my questions....thus I made this site so we
+        I am working on a DeckGL project. I found it more difficult
+        to find answers for this project than most of my projects. So
+         I made this site so we
         can hopefully use this as a hub to find quick answers inside chatrooms
         and forums all specific to DeckGL. Thank you.
          <div id="contactInfo" className="contactInfo" />
          If you have any questions feel free to email me at
+         <br>
          <span class="email">pavelyeganov@gmail.com</span></div>
           Or you can reach me via`,
 

@@ -40,17 +40,7 @@ router.post("/register", (req, res) => {
             s: "200", //size
             d: "mm" //Default
           });
-          var av = "";
-          avatarMe.configure({
-            defaultAvatar: "neoAvatar.png",
-            defaultAvatarPath:
-              "https://scontent.fbed1-1.fna.fbcdn.net/v/t1.0-9/41032872_1346113672186786_6907471266500837376_n.jpg?_nc_cat=0&oh=c10f3fd89992f3ef8e877d48207d1d34&oe=5C26DE32"
-          });
-          avatarMe.fetchAvatar(req.body.email, (err, avat) => {
-            if (err) console.log(err);
-            console.log(avat);
-            av = avat;
-          });
+
           const newUser = new User({
             userName: req.body.userName,
             email: req.body.email.toLowerCase(),
@@ -102,12 +92,17 @@ router.post("/login", (req, res) => {
           userName: user.userName,
           avatar: user.avatar
         };
-        jwt.sign(payload, keys.jwtSecret, { expiresIn: "5h" }, (err, token) => {
-          res.json({
-            succes: true,
-            token: "Bearer " + token
-          });
-        });
+        jwt.sign(
+          payload,
+          keys.jwtSecret,
+          { expiresIn: "12h" },
+          (err, token) => {
+            res.json({
+              succes: true,
+              token: "Bearer " + token
+            });
+          }
+        );
       } else {
         const errors = {
           errors: {

@@ -59,6 +59,7 @@ class Login extends Component {
 
             <label>Password</label>
             <input
+              type="password"
               onChange={this.onChange}
               placeholder={this.state.errors.password}
               name="password"
