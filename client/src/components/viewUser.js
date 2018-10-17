@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import NotFound from "./not-found";
 import "../styles/view-profile.css";
-import AddRepo from "./addRepo";
+
 class ViewUser extends Component {
   constructor(props) {
     super(props);
@@ -55,7 +55,7 @@ class ViewUser extends Component {
     if (Object.keys(this.state.user).length > 0) {
       return (
         <div className="viewWrap">
-          <AddRepo />
+
           <div className="viewLetter">
             <div className="viewHeader">
               <div className="viewImg">

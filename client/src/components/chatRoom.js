@@ -64,7 +64,7 @@ class ChatRoom extends Component {
       return this.state.chatUsers.map((user, ind) => {
         return (
           <Link
-            to={`/getUser/${user.user.id}`}
+            to={`/getUser/${user.user._id}`}
             className="chatUserItem"
             key={ind}
           >
